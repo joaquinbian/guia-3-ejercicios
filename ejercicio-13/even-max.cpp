@@ -18,8 +18,8 @@ int main(){
  
     const int LENGTH = 10;
 
-    int x, max;
-    bool was_assigned = false; 
+    int x, max = 0;
+    
 
     cout << "Ingresar 10 numeros y mostraremos cual es el maximo de los pares " <<  endl;
 
@@ -28,11 +28,10 @@ int main(){
         cin >> x;
 
         if(x % 2 == 0){
-            if(!was_assigned){
+            if(max == 0){
                 //es el primero
                 max = x;
-                was_assigned = true;
-            } else if(was_assigned && max < x){
+            } else if(max < x){
                 max = x;
             }
 
@@ -40,8 +39,9 @@ int main(){
 
     }
 
-
-    cout << "El maximo de los pares es " << max << endl;
+    if(max != 0){
+        cout << "El maximo de los pares es " << max << endl;
+    }
 
     return 0;
 }
